@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cinzel: 'Cinzel', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Garamond, serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Montserrat', sans-serif;
+  
+  /* Primary Color: Rose / Pink */
+  --color-pink-50: #FDF2F8;
+  --color-pink-100: #FCE7F3;
+  --color-pink-200: #FBCFE8;
+  --color-pink-300: #F9A8D4;
+  --color-pink-400: #F472B6;
+  --color-pink-500: #EC4899;
+  --color-pink-600: #DB2777;
+  --color-pink-700: #BE185D;
+  
+  /* Secondary Color: Purple / Morado */
+  --color-purple-100: #F3E8FF;
+  --color-purple-200: #E9D5FF;
+  --color-purple-300: #D8B4FE;
+  --color-purple-400: #C084FC;
+  --color-purple-500: #A855F7;
+  --color-purple-600: #9333EA;
+  --color-purple-700: #7E22CE;
+  --color-purple-800: #6B21A8;
+  --color-purple-900: #581C87;
+  
+  /* Light Luxury Canvas (Pastel Rose & Lavender Pearl) */
+  --color-light-50: #FFFFFF;
+  --color-light-100: #FAF5FB;
+  --color-light-200: #FDF2F8;
+  --color-light-300: #F5EBF7;
+  --color-light-400: #EEDEF2;
+
+  /* Deep Plum for Typography & High Contrast */
+  --color-plum-950: #1F0B30;
+  --color-plum-900: #2D1047;
+  --color-plum-800: #3E1661;
+  --color-plum-700: #542280;
+  --color-plum-600: #6B309E;
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF5FB;
+    color: #2D1047;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  h1, h2, h3, h4, .font-cinzel {
+    font-family: var(--font-cinzel);
+    letter-spacing: 0.05em;
+  }
+
+  .font-cormorant {
+    font-family: var(--font-serif);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+/* Custom luxury gradients and textures: Pink Primary + Purple Secondary */
+.rose-purple-gradient-text {
+  background: linear-gradient(135deg, #BE185D 0%, #EC4899 40%, #9333EA 80%, #6B21A8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-gradient-text {
+  background: linear-gradient(135deg, #9D174D 0%, #DB2777 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(135deg, #581C87 0%, #7E22CE 50%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  box-shadow: 0 10px 30px -5px rgba(168, 85, 247, 0.08), 0 0 15px rgba(244, 114, 182, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(236, 72, 153, 0.55);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px -8px rgba(168, 85, 247, 0.16), 0 0 20px rgba(244, 114, 182, 0.15);
+}
+
+/* Gentle shimmering keyframes */
+@keyframes shimmerPinkPurple {
+  0% { opacity: 0.4; transform: scale(0.97); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+  100% { opacity: 0.4; transform: scale(0.97); }
+}
+
+.animate-shimmer-subtle {
+  animation: shimmerPinkPurple 4s ease-in-out infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Hide scrollbar for photo scrollers if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

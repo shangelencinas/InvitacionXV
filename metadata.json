@@ -1,0 +1,6 @@
+{
+  "name": "XV Años Valentina Sofía",
+  "description": "Invitación digital interactiva y elegante para los XV años de Valentina Sofía Hernández.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
